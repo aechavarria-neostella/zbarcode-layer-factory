@@ -19,17 +19,17 @@ LAYER_FOLDER_TREE=python/lib/python3.9/site-packages
 
 #download and zip pillow layer
 mkdir -p $LAYER_FOLDER_TREE
-pip3 install -U pillow -t $LAYER_FOLDER_TREE
+pip3.9 install -U pillow -t $LAYER_FOLDER_TREE
 zip -r pillow_layer.zip python && rm -r python
 
 #download pyzbar layer
 mkdir -p $LAYER_FOLDER_TREE
-pip3 install pyzbar -t $LAYER_FOLDER_TREE
+pip3.9 install pyzbar -t $LAYER_FOLDER_TREE
 
 #get shared library (libzbar.so) needed for pyzbar to work properly within the Lambda function
 #compiling zbar to obtain libzbar.so
 sudo yum install -y autoconf autopoint gettext-devel automake pkgconfig libtool
-git clone https://github.com/mchehab/zbar.git
+git clone https://github.com/mchehab/zbar.gitl
 cd zbar/
 autoreconf -vfi
 ./configure && make && cd
