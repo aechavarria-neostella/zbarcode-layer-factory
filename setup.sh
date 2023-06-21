@@ -19,7 +19,7 @@ LAYER_FOLDER_TREE=python/lib/python3.9/site-packages
 
 #download and zip pillow layer
 mkdir -p $LAYER_FOLDER_TREE
-pip3 install pillow -t $LAYER_FOLDER_TREE
+pip3 install -U pillow -t $LAYER_FOLDER_TREE
 zip -r pillow_layer.zip python && rm -r python
 
 #download pyzbar layer
